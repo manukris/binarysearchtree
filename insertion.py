@@ -1,3 +1,4 @@
+#create a class node which contains 3 elements key left right
 class Node:
 
     def __init__(self,key):
@@ -5,6 +6,7 @@ class Node:
         self.right = None
         self.val   = key
 
+#insert function checks the current key
 def insert(root,key):
 
     if root is None:
@@ -20,6 +22,7 @@ def insert(root,key):
 
     return root
 
+#show  bst in inorder
 def inorder(root):
 
     if root:
@@ -27,14 +30,25 @@ def inorder(root):
         print(root.val)
         inorder(root.right)
 
+def printTree(root):
+
+    if root:
+        printTree(root.left)
+
+        print(root.val)
+        print("/")
+        printTree(root.right)
+
+
 
 r = Node(50)
-r = insert(r, 30)
-r = insert(r, 20)
-r = insert(r, 40)
-r = insert(r, 70)
-r = insert(r, 60)
-r = insert(r, 80)
+insert(r, 30)
+insert(r, 20)
+insert(r, 40)
+insert(r, 70)
+insert(r, 60)
+insert(r, 80)
 
 # Print inoder traversal of the BST
-inorder(r)
+# inorder(r)
+printTree(r)
